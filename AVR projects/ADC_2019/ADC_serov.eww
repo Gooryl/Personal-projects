@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\ADC_2019.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\ADC_serov.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
