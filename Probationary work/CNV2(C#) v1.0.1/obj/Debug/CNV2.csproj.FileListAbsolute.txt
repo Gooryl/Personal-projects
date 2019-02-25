@@ -1,0 +1,39 @@
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\bin\Debug\CNV2.exe.config
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\bin\Debug\CNV2.exe
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\bin\Debug\CNV2.pdb
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\obj\Debug\CNV2.csprojResolveAssemblyReference.cache
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\obj\Debug\CNV2.Form1.resources
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\obj\Debug\CNV2.Properties.Resources.resources
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\obj\Debug\CNV2.csproj.GenerateResource.Cache
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\obj\Debug\CNV2.exe
+c:\users\y_bykovtsev\documents\visual studio 2013\Projects\CNV2\CNV2\obj\Debug\CNV2.pdb
+C:\Users\y_bykovtsev\Desktop\CNV2\bin\Debug\CNV2.exe.config
+C:\Users\y_bykovtsev\Desktop\CNV2\obj\Debug\CNV2.exe
+C:\Users\y_bykovtsev\Desktop\CNV2\obj\Debug\CNV2.pdb
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\bin\Debug\CNV2.exe.config
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\obj\Debug\CNV2.exe
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\obj\Debug\CNV2.pdb
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\bin\Debug\CNV2.exe
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\bin\Debug\CNV2.pdb
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\obj\Debug\CNV2.csprojResolveAssemblyReference.cache
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\obj\Debug\CNV2.Form1.resources
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\obj\Debug\CNV2.Properties.Resources.resources
+C:\Users\y_bykovtsev\Documents\Visual Studio 2013\Projects\CNV2\obj\Debug\CNV2.csproj.GenerateResource.Cache
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\bin\Debug\CNV2.exe.config
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\obj\Debug\CNV2.exe
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\obj\Debug\CNV2.pdb
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\bin\Debug\CNV2.exe
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\bin\Debug\CNV2.pdb
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\obj\Debug\CNV2.csprojResolveAssemblyReference.cache
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\obj\Debug\CNV2.Form1.resources
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\obj\Debug\CNV2.Properties.Resources.resources
+C:\Users\y_bykovtsev\Desktop\CNV2_project\CNV2(C#) v1.0.0\obj\Debug\CNV2.csproj.GenerateResource.Cache
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\bin\Debug\CNV2.exe.config
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\obj\Debug\CNV2.exe
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\obj\Debug\CNV2.pdb
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\bin\Debug\CNV2.exe
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\bin\Debug\CNV2.pdb
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\obj\Debug\CNV2.csprojResolveAssemblyReference.cache
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\obj\Debug\CNV2.Form1.resources
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\obj\Debug\CNV2.Properties.Resources.resources
+D:\Distr\Projects\CNV2_project\CNV2(C#) v1.0.1\obj\Debug\CNV2.csproj.GenerateResource.Cache
