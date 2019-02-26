@@ -1,28 +1,27 @@
 ################################################################################
 #                                                                              #
-#      IAR Universal Linker V6.5.0.91                                          #
+#      IAR Universal Linker V6.6.0.102                                         #
 #                                                                              #
-#           Link time     =  25/Feb/2019  19:28:43                             #
+#           Link time     =  26/Feb/2019  16:36:35                             #
 #           Target CPU    =  A90                                               #
-#           List file     =  "D:\MyProjects\Personal-projects\AVR projects\ADC #
-#                            _2019\Debug\List\ADC_2019.map"                    #
-#           Output file 1 =  "D:\MyProjects\Personal-projects\AVR projects\ADC #
-#                            _2019\Debug\Exe\ADC_2019.hex"                     #
+#           List file     =  "C:\Personal projects\AVR projects\ADC_2019\Debug #
+#                            \List\ADC_2019.map"                               #
+#           Output file 1 =  "C:\Personal projects\AVR projects\ADC_2019\Debug #
+#                            \Exe\ADC_2019.hex"                                #
 #                            Format: intel-standard                            #
-#           Command line  =  -f                                                #
-#                            C:\Users\Y_BYKO~1\AppData\Local\Temp\EWA3BA.tmp   #
-#                            ("D:\MyProjects\Personal-projects\AVR projects\AD #
-#                            C_2019\Debug\Obj\I2C.r90"                         #
-#                            "D:\MyProjects\Personal-projects\AVR projects\ADC #
-#                            _2019\Debug\Obj\main.r90"                         #
-#                            "D:\MyProjects\Personal-projects\AVR projects\ADC #
-#                            _2019\Debug\Obj\UART.r90"                         #
+#           Command line  =  -f C:\Users\ёрий\AppData\Local\Temp\EW490B.tmp    #
+#                            ("C:\Personal projects\AVR projects\ADC_2019\Debu #
+#                            g\Obj\I2C.r90"                                    #
+#                            "C:\Personal projects\AVR projects\ADC_2019\Debug #
+#                            \Obj\main.r90"                                    #
+#                            "C:\Personal projects\AVR projects\ADC_2019\Debug #
+#                            \Obj\UART.r90"                                    #
 #                            -o                                                #
-#                            "D:\MyProjects\Personal-projects\AVR projects\ADC #
-#                            _2019\Debug\Exe\ADC_2019.hex"                     #
+#                            "C:\Personal projects\AVR projects\ADC_2019\Debug #
+#                            \Exe\ADC_2019.hex"                                #
 #                            -Fintel-standard -l                               #
-#                            "D:\MyProjects\Personal-projects\AVR projects\ADC #
-#                            _2019\Debug\List\ADC_2019.map"                    #
+#                            "C:\Personal projects\AVR projects\ADC_2019\Debug #
+#                            \List\ADC_2019.map"                               #
 #                            -xms                                              #
 #                            "-IC:\Program Files (x86)\IAR Systems\Embedded Wo #
 #                            rkbench 8.0\avr\LIB\"                             #
@@ -71,9 +70,9 @@
 #                            SRAM_END                                          #
 #                            -Z(XDATA)EEPROM_I,EEPROM_N=_..X_EEPROM_START-_..X #
 #                            _EEPROM_END)                                      #
-#                            -D_..X_FLASH_BASE=_..X_INTVEC_SIZE -H1895         #
-#                            -h(CODE)0-(_..X_INTVEC_SIZE-1)                    #
-#                            -D_..X_CSTACK_BASE=_..X_SRAM_BASE                 #
+#                            -D_..X_FLASH_BASE=_..X_INTVEC_SIZE                #
+#                            -h'1895'(CODE)0-(_..X_INTVEC_SIZE-1)              #
+#                            --global_fill -D_..X_CSTACK_BASE=_..X_SRAM_BASE   #
 #                            -D_..X_CSTACK_END=_..X_SRAM_END                   #
 #                            -D_..X_RSTACK_BASE=_..X_SRAM_BASE                 #
 #                            -D_..X_RSTACK_END=_..X_SRAM_END -s                #
@@ -81,7 +80,7 @@
 #                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
 #                            bench 8.0\avr\LIB\DLIB\dlAVR-1s-ec_nomul-n.r90")  #
 #                                                                              #
-#                           Copyright (C) 1987-2016 IAR Systems AB.            #
+#                           Copyright (C) 1987-2018 IAR Systems AB.            #
 ################################################################################
 
 
@@ -179,7 +178,7 @@ Absolute parts
            _..X_INTVEC_SIZE        0000001E 
     *************************************************************************
 
-  FILE NAME : D:\MyProjects\Personal-projects\AVR projects\ADC_2019\Debug\Obj\I2C.r90
+  FILE NAME : C:\Personal projects\AVR projects\ADC_2019\Debug\Obj\I2C.r90
   PROGRAM MODULE, NAME : I2C
 
   SEGMENTS IN THE MODULE
@@ -214,7 +213,7 @@ ABSOLUTE
 
     *************************************************************************
 
-  FILE NAME : D:\MyProjects\Personal-projects\AVR projects\ADC_2019\Debug\Obj\main.r90
+  FILE NAME : C:\Personal projects\AVR projects\ADC_2019\Debug\Obj\main.r90
   PROGRAM MODULE, NAME : main
 
   SEGMENTS IN THE MODULE
@@ -228,7 +227,7 @@ CODE
 
     *************************************************************************
 
-  FILE NAME : D:\MyProjects\Personal-projects\AVR projects\ADC_2019\Debug\Obj\UART.r90
+  FILE NAME : C:\Personal projects\AVR projects\ADC_2019\Debug\Obj\UART.r90
   PROGRAM MODULE, NAME : UART
 
   SEGMENTS IN THE MODULE
@@ -244,48 +243,38 @@ ABSOLUTE
            TIMSK                   00000059 
     -------------------------------------------------------------------------
 ABSOLUTE
-  Relative segment, address: DATA 00000053 - 00000053 (0x1 bytes), align: 0
+  Relative segment, address: DATA 00000050 - 00000050 (0x1 bytes), align: 0
   Segment part 2. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _A_TCCR0B               00000053 
+           _A_TCCR1                00000050 
            LOCAL                   ADDRESS         
            =====                   =======         
-           TCCR0B                  00000053 
+           TCCR1                   00000050 
     -------------------------------------------------------------------------
 ABSOLUTE
-  Relative segment, address: DATA 00000052 - 00000052 (0x1 bytes), align: 0
+  Relative segment, address: DATA 0000004F - 0000004F (0x1 bytes), align: 0
   Segment part 3. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _A_TCNT0                00000052 
+           _A_TCNT1                0000004F 
            LOCAL                   ADDRESS         
            =====                   =======         
-           TCNT0                   00000052 
+           TCNT1                   0000004F 
     -------------------------------------------------------------------------
 ABSOLUTE
-  Relative segment, address: DATA 0000004A - 0000004A (0x1 bytes), align: 0
+  Relative segment, address: DATA 0000004E - 0000004E (0x1 bytes), align: 0
   Segment part 4. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _A_TCCR0A               0000004A 
+           _A_OCR1A                0000004E 
            LOCAL                   ADDRESS         
            =====                   =======         
-           TCCR0A                  0000004A 
-    -------------------------------------------------------------------------
-ABSOLUTE
-  Relative segment, address: DATA 00000049 - 00000049 (0x1 bytes), align: 0
-  Segment part 5. ROOT 
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           _A_OCR0A                00000049 
-           LOCAL                   ADDRESS         
-           =====                   =======         
-           OCR0A                   00000049 
+           OCR1A                   0000004E 
     -------------------------------------------------------------------------
 ABSOLUTE
   Relative segment, address: DATA 00000038 - 00000038 (0x1 bytes), align: 0
-  Segment part 6. ROOT 
+  Segment part 5. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PORTB                00000038 
@@ -295,7 +284,7 @@ ABSOLUTE
     -------------------------------------------------------------------------
 ABSOLUTE
   Relative segment, address: DATA 00000037 - 00000037 (0x1 bytes), align: 0
-  Segment part 7. ROOT 
+  Segment part 6. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_DDRB                 00000037 
@@ -305,14 +294,14 @@ ABSOLUTE
     -------------------------------------------------------------------------
 NEAR_Z
   Relative segment, address: DATA 000000A0 - 000000A2 (0x3 bytes), align: 0
-  Segment part 15.            Intra module refs:   UART_bit_interval
+  Segment part 14.            Intra module refs:   UART_bit_interval
            LOCAL                   ADDRESS         
            =====                   =======         
            UART                    000000A0 
     -------------------------------------------------------------------------
 CODE
   Relative segment, address: CODE 00000026 - 00000039 (0x14 bytes), align: 1
-  Segment part 17.            Intra module refs:   UART_bit_interval::??INTVEC 20
+  Segment part 19.            Intra module refs:   UART_bit_interval::??INTVEC 20
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            UART_bit_interval       00000026 
@@ -320,7 +309,7 @@ CODE
     -------------------------------------------------------------------------
 INTVEC
   Common segment, address: CODE 00000000 - 00000015 (0x16 bytes), align: 1
-  Segment part 12. ROOT 
+  Segment part 11. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            UART_bit_interval::??INTVEC 20
@@ -328,7 +317,7 @@ INTVEC
     -------------------------------------------------------------------------
 INITTAB
   Relative segment, address: CODE 0000001E - 00000023 (0x6 bytes), align: 0
-  Segment part 16.            Intra module refs:   UART
+  Segment part 15.            Intra module refs:   UART
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?<Segment init: NEAR_Z>
@@ -504,8 +493,7 @@ ABSOLUTE             DATA               0000001C                     rel    0
                      DATA               0000001E                   
                      DATA               0000001F                   
                      DATA          00000037 - 00000038           2 
-                     DATA          00000049 - 0000004A           2 
-                     DATA          00000052 - 00000053           2 
+                     DATA          0000004E - 00000050           3 
                      DATA          00000059 - 00000059           1 
 CSTACK               DATA          00000060 - 0000007F          20   dse    0
 RSTACK               DATA          00000080 - 0000009F          20   dse    0
@@ -519,7 +507,7 @@ NEAR_Z               DATA          000000A0 - 000000A2           3   rel    0
                 ****************************************
 
  162 bytes of CODE memory (+            8 range fill )
-  67 bytes of DATA memory (+ 7 absolute )
+  67 bytes of DATA memory (+ 6 absolute )
 
 Errors: none
 Warnings: none
