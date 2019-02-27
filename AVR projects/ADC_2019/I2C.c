@@ -4,6 +4,12 @@
 
 static I2C_slave An_to_Dig_Con;
 
+#pragma vector=TIMER0_COMPA_vect
+__interrupt void I2C_bit_interval(void)
+{
+  
+}
+
 void I2C_init(void)
 {
   __disable_interrupt();

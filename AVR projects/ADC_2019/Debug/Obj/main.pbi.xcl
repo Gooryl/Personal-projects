@@ -1,6 +1,7 @@
 "D:\MyProjects\Personal-projects\AVR projects\ADC_2019\main.c"
 -std=c99
--ferror-limit=100
+-ferror-limit=0
+-fbracket-depth=512
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\inc
 -I
@@ -143,9 +144,9 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\inc\dlib\c
 -D__JMP_BUF_ELEMENT_TYPE__=unsigned char
 -D__JMP_BUF_NUM_ELEMENTS__=22
 -D__TID__=0x5a12
--D__VER__=710
+-D__VER__=720
 -D__SUBVERSION__=1
--D__BUILD_NUMBER__=1197
+-D__BUILD_NUMBER__=1511
 -D__IAR_SYSTEMS_ICC__=8
 -D__VA_STACK_DECREASING__=1
 -D__VA_STACK_ALIGN__=1
@@ -158,8 +159,6 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\inc\dlib\c
 -D__WCHAR_T_MAX__=0xffffU
 -D__DEF_PTR_MEM__=__near
 -D__DEF_PTR_SIZE__=2
--D__CODE_MEMORY_LIST3__(_P1,_P2)=__CODE_MEM_HELPER3__(__nearfunc, 0, _P1, _P2)
--D__DATA_MEMORY_LIST3__(_P1,_P2)=__DATA_MEM_HELPER3__(__tiny, 0, _P1, _P2) __DATA_MEM_HELPER3__(__near, 1, _P1, _P2) __DATA_MEM_HELPER3__(__tinyflash, 2, _P1, _P2) __DATA_MEM_HELPER3__(__flash, 3, _P1, _P2) __DATA_MEM_HELPER3__(__eeprom, 4, _P1, _P2) __DATA_MEM_HELPER3__(__io, 5, _P1, _P2) __DATA_MEM_HELPER3__(__ext_io, 6, _P1, _P2) __DATA_MEM_HELPER3__(__generic, 7, _P1, _P2)
 -D__DATA_MEM0__=__tiny
 -D__DATA_MEM0_POINTER_OK__=1
 -D__DATA_MEM0_UNIQUE_POINTER__=1
@@ -245,15 +244,9 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\inc\dlib\c
 -D__CODE_MEM0_POINTER_OK__=1
 -D__CODE_MEM0_UNIQUE_POINTER__=1
 -D__CODE_MEM0_VAR_OK__=1
--D__CODE_PTR_MEMORY_LIST3__(_P1,_P2)=__CODE_PTR_MEM_HELPER3__(__nearfunc, 0, _P1, _P2)
--D__DATA_PTR_MEMORY_LIST3__(_P1,_P2)=__DATA_PTR_MEM_HELPER3__(__tiny, 0, _P1, _P2) __DATA_PTR_MEM_HELPER3__(__near, 1, _P1, _P2) __DATA_PTR_MEM_HELPER3__(__tinyflash, 2, _P1, _P2) __DATA_PTR_MEM_HELPER3__(__flash, 3, _P1, _P2) __DATA_PTR_MEM_HELPER3__(__eeprom, 4, _P1, _P2) __DATA_PTR_MEM_HELPER3__(__io, 5, _P1, _P2) __DATA_PTR_MEM_HELPER3__(__ext_io, 6, _P1, _P2) __DATA_PTR_MEM_HELPER3__(__generic, 7, _P1, _P2)
--D__VAR_MEMORY_LIST3__(_P1,_P2)=__VAR_MEM_HELPER3__(__tiny, 0, _P1, _P2) __VAR_MEM_HELPER3__(__near, 1, _P1, _P2)
 -D__HEAP_MEM0__=1
 -D__HEAP_DEFAULT_MEM__=1
--D__HEAP_MEMORY_LIST3__(_P1,_P2)=__HEAP_MEM_HELPER3__(__near, 1, _P1, _P2)
 -D__MULTIPLE_HEAPS__=0
--D__TOPM_DATA_MEMORY_LIST3__(_P1,_P2)=__TOPM_DATA_MEM_HELPER3__(__eeprom, 4, _P1, _P2) __TOPM_DATA_MEM_HELPER3__(__generic, 7, _P1, _P2)
--D__TOPP_DATA_MEMORY_LIST3__(_P1,_P2)=__TOPP_DATA_MEM_HELPER3__(__near, 1, _P1, _P2) __TOPP_DATA_MEM_HELPER3__(__eeprom, 4, _P1, _P2) __TOPP_DATA_MEM_HELPER3__(__generic, 7, _P1, _P2)
 -D__DEF_HEAP_MEM__=__near
 -D__PRAGMA_PACK_ON__=1
 -D__MULTIPLE_INHERITANCE__=1
@@ -267,7 +260,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\inc\dlib\c
 -D__VERSION_3_CALLS__=1
 -D__PLAIN_INT_BITFIELD_IS_SIGNED__=1
 -D__HAS_LOCATED_DECLARATION__=1
--D__IAR_COMPILERBASE__=595714
+-D__IAR_COMPILERBASE__=595716
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
@@ -298,34 +291,41 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\inc\dlib\c
 -DENABLE_BIT_DEFINITIONS=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\LIB\DLIB\dlAVR-1s-ec_nomul-n.h"
 -D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.0\\avr\\LIB\\DLIB\\dlAVR-1s-ec_nomul-n.h"
--D__VERSION__="IAR C/C++ Compiler V7.10.1.1197 for Atmel AVR"
+-D__VERSION__="IAR C/C++ Compiler V7.20.1.1511 for Microchip AVR"
 -D__CODE_MEMORY_LIST1__()=__CODE_MEM_HELPER1__(__code, 0 )
 -D__CODE_MEMORY_LIST2__(_P1)=__CODE_MEM_HELPER2__(__code, 0 ,  _P1 )
--D__CODE_MEMORY_LIST3__(_P1, _P2)=__CODE_MEM_HELPER3__(__code, 0 ,  _P1 ,  _P2 )
+-D__CODE_MEMORY_LIST3__(_P1,_P2)=__CODE_MEM_HELPER3__(__code, 0 ,  _P1 ,  _P2 )
 -D__DATA_MEMORY_LIST1__()=__DATA_MEM_HELPER1__(__data, 0 )
 -D__DATA_MEMORY_LIST2__(_P1)=__DATA_MEM_HELPER2__(__data, 0 ,  _P1 )
--D__DATA_MEMORY_LIST3__(_P1, _P2)=__DATA_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
+-D__DATA_MEMORY_LIST3__(_P1,_P2)=__DATA_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
 -D__CODE_PTR_MEMORY_LIST1__()=__CODE_PTR_MEM_HELPER1__(__code, 0 )
 -D__CODE_PTR_MEMORY_LIST2__(_P1)=__CODE_PTR_MEM_HELPER2__(__code, 0 ,  _P1 )
--D__CODE_PTR_MEMORY_LIST3__(_P1, _P2)=__CODE_PTR_MEM_HELPER3__(__code, 0 ,  _P1 ,  _P2 )
+-D__CODE_PTR_MEMORY_LIST3__(_P1,_P2)=__CODE_PTR_MEM_HELPER3__(__code, 0 ,  _P1 ,  _P2 )
 -D__DATA_PTR_MEMORY_LIST1__()=__DATA_PTR_MEM_HELPER1__(__data, 0 )
 -D__DATA_PTR_MEMORY_LIST2__(_P1)=__DATA_PTR_MEM_HELPER2__(__data, 0 ,  _P1 )
--D__DATA_PTR_MEMORY_LIST3__(_P1, _P2)=__DATA_PTR_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
+-D__DATA_PTR_MEMORY_LIST3__(_P1,_P2)=__DATA_PTR_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
 -D__VAR_MEMORY_LIST1__()=__VAR_MEM_HELPER1__(__data, 0 )
 -D__VAR_MEMORY_LIST2__(_P1)=__VAR_MEM_HELPER2__(__data, 0 ,  _P1 )
--D__VAR_MEMORY_LIST3__(_P1, _P2)=__VAR_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
+-D__VAR_MEMORY_LIST3__(_P1,_P2)=__VAR_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
 -D__VARD_MEMORY_LIST1__()=__VARD_MEM_HELPER1__(__data, 0, _ )
 -D__HEAP_MEMORY_LIST1__()=__HEAP_MEM_HELPER1__(__data, 0 )
 -D__HEAP_MEMORY_LIST2__(_P1)=__HEAP_MEM_HELPER2__(__data, 0 ,  _P1 )
--D__HEAP_MEMORY_LIST3__(_P1, _P2)=__HEAP_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
+-D__HEAP_MEMORY_LIST3__(_P1,_P2)=__HEAP_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
 -D__HVAR_MEMORY_LIST1__()=__HVAR_MEM_HELPER1__(__data, 0 )
 -D__HEAPD_MEMORY_LIST1__()=__HEAPD_MEM_HELPER1__(__data, 0, _ )
 -D__HEAPU_MEMORY_LIST1__()=__HEAPU_MEM_HELPER1__(__data, 0 )
 -D__TOPM_DATA_MEMORY_LIST1__()=
 -D__TOPM_DATA_MEMORY_LIST2__(_P1)=
--D__TOPM_DATA_MEMORY_LIST3__(_P1, _P2)=
+-D__TOPM_DATA_MEMORY_LIST3__(_P1,_P2)=
 -D__TOPP_DATA_MEMORY_LIST1__()=__TOPP_DATA_MEM_HELPER1__(__data, 0 )
 -D__TOPP_DATA_MEMORY_LIST2__(_P1)=__TOPP_DATA_MEM_HELPER2__(__data, 0 ,  _P1 )
--D__TOPP_DATA_MEMORY_LIST3__(_P1, _P2)=__TOPP_DATA_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
+-D__TOPP_DATA_MEMORY_LIST3__(_P1,_P2)=__TOPP_DATA_MEM_HELPER3__(__data, 0 ,  _P1 ,  _P2 )
 -D__DATA_MEM0_SIZE_TYPE__=unsigned int
 -D__DATA_MEM0_INDEX_TYPE__=signed int
+-D__iar_fp2bits32(x)=0
+-D__iar_fp2bits64(x)=0
+-D__iar_fpgethi64(x)=0
+-D__iar_atomic_add_fetch(x,y,z)=0
+-D__iar_atomic_sub_fetch(x,y,z)=0
+-D__iar_atomic_load(x,y)=0ULL
+-D__iar_atomic_compare_exchange_weak(a,b,c,d,e)=0

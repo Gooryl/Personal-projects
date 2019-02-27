@@ -2110,6 +2110,9 @@
         <file>
             <name>$PROJ_DIR$\UART.h</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\USI_TWI_Master.h</name>
+        </file>
     </group>
     <group>
         <name>Source</name>
@@ -2121,6 +2124,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\UART.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\USI_TWI_Master.c</name>
         </file>
     </group>
 </project>
