@@ -19,14 +19,16 @@ void UART_init(void)
   DDRB |= (1 << TX_pin);
   TX_HIGH;
   //    Calculate prescaler for T/C 0 and compare register value
-  unsigned int temp = (MCU_frequency/UART_baud_rate)/2;
+  unsigned int temp = (MCU_frequency/UART_baud_rate);
   for (unsigned int i = 1;;i++)
   {
     static unsigned int prescaler = 1;
-    if (temp/prescaler <= 256)
+    if (temp/prescaler <= 255)
     {
-      TCCR1 = i; // set equivalent to prescaler value in T/C1 control reg 
-      OCR1A = temp/prescaler-1; // store compare value in compare register
+      //TCCR1 = (1 << CTC1) | i; // set equivalent to prescaler value in T/C1 control reg 
+      UART.prescaler_code = i;
+      OCR1A = temp/prescaler; // store compare value in compare register
+      OCR1C = OCR1A;
       break;
     }
     prescaler *= 2;
@@ -39,8 +41,9 @@ void UART_send_byte(unsigned char byte)
   
   // Generate START 
   TX_LOW; //set TX pin to 0
-  TCNT1 = 0x00; // purge T/C0 counter value
+  TCNT1 = 0x00; // purge T/C1 counter value
   TIMSK |= (1 << OCIE1A); //enable compare interrupt
+  TCCR1 = (1 << CTC1) | (unsigned char)UART.prescaler_code;
   __enable_interrupt();
   while(UART.bit_interval_passed != 1);
   UART.bit_interval_passed = 0;
@@ -62,6 +65,7 @@ void UART_send_byte(unsigned char byte)
   
   // Get everything to default
   __disable_interrupt();
+  TCCR1 &= (1 << CTC1); // stop T/C1
   TIMSK &= ~(1 << OCIE1A);
   UART.bit_interval_passed = 0;
   UART.bit_to_send_number = 0;

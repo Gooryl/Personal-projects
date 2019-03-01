@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V6.6.0.102                                         #
 #                                                                              #
-#           Link time     =  27/Feb/2019  18:37:43                             #
+#           Link time     =  01/Mar/2019  19:51:03                             #
 #           Target CPU    =  A90                                               #
 #           List file     =  "D:\MyProjects\Personal-projects\AVR projects\ADC #
 #                            _2019\Debug\List\ADC_2019.map"                    #
@@ -10,7 +10,7 @@
 #                            _2019\Debug\Exe\ADC_2019.hex"                     #
 #                            Format: intel-standard                            #
 #           Command line  =  -f                                                #
-#                            C:\Users\Y_BYKO~1\AppData\Local\Temp\EW6A1F.tmp   #
+#                            C:\Users\Y_BYKO~1\AppData\Local\Temp\EW65F8.tmp   #
 #                            ("D:\MyProjects\Personal-projects\AVR projects\AD #
 #                            C_2019\Debug\Obj\I2C.r90"                         #
 #                            "D:\MyProjects\Personal-projects\AVR projects\ADC #
@@ -41,14 +41,15 @@
 #                            -D_..X_EXT_NV_BASE=_..X_SRAM_END                  #
 #                            -D_..X_EXT_NV_SIZE=0 -D_..X_EEPROM_START=0        #
 #                            -D_..X_EEPROM_END=1FF) -D_..X_HEAP_SIZE=0         #
-#                            -D_..X_TINY_HEAP_SIZE=0                           #
+#                            -D_..X_TINY_HEAP_SIZE=10                          #
 #                            -D_..X_NEAR_HEAP_SIZE=20 -D_..X_FAR_HEAP_SIZE=0   #
 #                            -D_..X_HUGE_HEAP_SIZE=0 -D_..X_CSTACK_SIZE=20     #
 #                            -D_..X_RSTACK_SIZE=20                             #
 #                            -D_..X_FLASH_CODE_END=_..X_FLASH_END -f           #
 #                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
-#                            bench 8.0\avr\src\template\cfg1soim.xcl"          #
-#                            (-ca90 -w29 -Z(CODE)INTVEC=0-_..X_INTVEC_SIZE     #
+#                            bench 8.0\avr\src\template\cfg1toim.xcl"          #
+#                            (-ca90 -w29                                       #
+#                            -Z(CODE)INTVEC=0-(_..X_INTVEC_SIZE-1)             #
 #                            -Z(CODE)TINY_F=_..X_FLASH_BASE-FF                 #
 #                            -Z(CODE)NEAR_F=_..X_FLASH_BASE-_..X_FLASH_END     #
 #                            -Z(CODE)SWITCH=_..X_FLASH_BASE-_..X_FLASH_END     #
@@ -60,28 +61,30 @@
 #                            -Z(CODE)CHECKSUM#_..X_FLASH_END                   #
 #                            -Z(DATA)TINY_I,TINY_Z,TINY_N=_..X_SRAM_TBASE:+_.. #
 #                            X_SRAM_TSIZE                                      #
-#                            -Z(DATA)CSTACK+_..X_CSTACK_SIZE=_..X_CSTACK_BASE- #
-#                            _..X_CSTACK_END                                   #
-#                            -Z(DATA)HEAP+_..X_HEAP_SIZE=_..X_SRAM_BASE-_..X_S #
-#                            RAM_END                                           #
-#                            -Z(DATA)IOSTREAM_N#_..X_SRAM_BASE-_..X_SRAM_END   #
-#                            -Z(DATA)NEAR_HEAP+_..X_NEAR_HEAP_SIZE=_..X_SRAM_B #
-#                            ASE-_..X_SRAM_END                                 #
+#                            -Z(DATA)CSTACK+_..X_CSTACK_SIZE=_..X_SRAM_TBASE:+ #
+#                            _..X_SRAM_TSIZE                                   #
+#                            -Z(DATA)HEAP+_..X_HEAP_SIZE=_..X_SRAM_TBASE:+_..X #
+#                            _SRAM_TSIZE                                       #
+#                            -Z(DATA)IOSTREAM_N#_..X_SRAM_TBASE:+_..X_SRAM_TSI #
+#                            ZE                                                #
+#                            -Z(DATA)TINY_HEAP+_..X_TINY_HEAP_SIZE=_..X_SRAM_T #
+#                            BASE:+_..X_SRAM_TSIZE                             #
 #                            -Z(DATA)RSTACK+_..X_RSTACK_SIZE=_..X_RSTACK_BASE- #
 #                            _..X_RSTACK_END                                   #
-#                            -Z(DATA)NEAR_I,NEAR_Z,NEAR_N=_..X_SRAM_BASE-_..X_ #
-#                            SRAM_END                                          #
+#                            -Z(DATA)NEAR_I,NEAR_Z=_..X_SRAM_BASE-_..X_SRAM_EN #
+#                            D                                                 #
+#                            -Z(DATA)NEAR_HEAP+_..X_NEAR_HEAP_SIZE=_..X_SRAM_B #
+#                            ASE-_..X_SRAM_END                                 #
+#                            -Z(DATA)NEAR_N=_..X_SRAM_BASE-_..X_SRAM_END       #
 #                            -Z(XDATA)EEPROM_I,EEPROM_N=_..X_EEPROM_START-_..X #
 #                            _EEPROM_END)                                      #
 #                            -D_..X_FLASH_BASE=_..X_INTVEC_SIZE                #
 #                            -h'1895'(CODE)0-(_..X_INTVEC_SIZE-1)              #
-#                            --global_fill -D_..X_CSTACK_BASE=_..X_SRAM_BASE   #
-#                            -D_..X_CSTACK_END=_..X_SRAM_END                   #
-#                            -D_..X_RSTACK_BASE=_..X_SRAM_BASE                 #
+#                            --global_fill -D_..X_RSTACK_BASE=_..X_SRAM_BASE   #
 #                            -D_..X_RSTACK_END=_..X_SRAM_END -s                #
 #                            __program_start                                   #
 #                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
-#                            bench 8.0\avr\LIB\DLIB\dlAVR-1s-ec_nomul-n.r90")  #
+#                            bench 8.0\avr\LIB\DLIB\dlAVR-1t-ec_nomul-n.r90")  #
 #                                                                              #
 #                           Copyright (C) 1987-2018 IAR Systems AB.            #
 ################################################################################
@@ -96,7 +99,7 @@
                 *                                      *
                 ****************************************
 
-       Program entry at : CODE      00000212  Relocatable, from module : ?C_STARTUP
+       Program entry at : CODE      00000246  Relocatable, from module : ?C_STARTUP
 
 
 
@@ -124,10 +127,10 @@
   __dlib_full_locale_support = 0
   __enhanced_core            = enabled
   __has_elpm                 = false
-  __memory_model             = 2
+  __memory_model             = 1
   __rt_version               = 3
   __tiny_avr                 = false
-  __vtable_memory            = __nearflash
+  __vtable_memory            = __tinyflash
 
                 ****************************************
                 *                                      *
@@ -154,8 +157,6 @@ Absolute parts
            =====                   =======         ======
            _..X_RSTACK_END         0000025F 
            _..X_RSTACK_BASE        00000060 
-           _..X_CSTACK_END         0000025F 
-           _..X_CSTACK_BASE        00000060 
            _..X_FLASH_BASE         0000001E 
            _..X_FLASH_CODE_END     00001FFF 
            _..X_RSTACK_SIZE        00000020 
@@ -163,7 +164,7 @@ Absolute parts
            _..X_HUGE_HEAP_SIZE     00000000 
            _..X_FAR_HEAP_SIZE      00000000 
            _..X_NEAR_HEAP_SIZE     00000020 
-           _..X_TINY_HEAP_SIZE     00000000 
+           _..X_TINY_HEAP_SIZE     00000010 
            _..X_HEAP_SIZE          00000000 
            _..X_EEPROM_END         000001FF 
            _..X_EEPROM_START       00000000 
@@ -238,28 +239,36 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000034 - 00000053 (0x20 bytes), align: 1
+  Relative segment, address: CODE 00000034 - 0000004B (0x18 bytes), align: 1
   Segment part 9.             Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           I2C_check_status        00000034 
-               calls direct
+           convert_I2C_ADC_code_to_mV_value
+                                   00000034 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000054 - 0000006B (0x18 bytes), align: 1
+  Relative segment, address: CODE 0000004C - 0000006D (0x22 bytes), align: 1
   Segment part 10.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           I2C_start_conversation
-                                   00000054 
+           I2C_check_status        0000004C 
                calls direct
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000006C - 00000097 (0x2c bytes), align: 1
-  Segment part 11.
+  Relative segment, address: CODE 0000006E - 00000087 (0x1a bytes), align: 1
+  Segment part 11.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           main                    0000006C        ?cstartup_call_main (?C_STARTUP)
+           I2C_start_convertation
+                                   0000006E 
+               calls direct
+    -------------------------------------------------------------------------
+CODE
+  Relative segment, address: CODE 00000088 - 000000BD (0x36 bytes), align: 1
+  Segment part 12.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    00000088        ?cstartup_call_main (?C_STARTUP)
                calls direct
     -------------------------------------------------------------------------
 INITTAB
@@ -268,7 +277,7 @@ INITTAB
                                                    USI_TWI_state (USI_TWI_Master)
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?<Segment init: NEAR_Z>
+           ?<Segment init: TINY_Z>
                                    0000001E 
 
     *************************************************************************
@@ -290,7 +299,7 @@ ABSOLUTE
     -------------------------------------------------------------------------
 ABSOLUTE
   Relative segment, address: DATA 00000050 - 00000050 (0x1 bytes), align: 0
-  Segment part 2. ROOT        Intra module refs:   UART_init
+  Segment part 2. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_TCCR1                00000050 
@@ -319,8 +328,18 @@ ABSOLUTE
            OCR1A                   0000004E 
     -------------------------------------------------------------------------
 ABSOLUTE
-  Relative segment, address: DATA 00000038 - 00000038 (0x1 bytes), align: 0
+  Relative segment, address: DATA 0000004D - 0000004D (0x1 bytes), align: 0
   Segment part 5. ROOT        Intra module refs:   UART_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_OCR1C                0000004D 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           OCR1C                   0000004D 
+    -------------------------------------------------------------------------
+ABSOLUTE
+  Relative segment, address: DATA 00000038 - 00000038 (0x1 bytes), align: 0
+  Segment part 6. ROOT        Intra module refs:   UART_init
                                                    USI_TWI_Master_Initialise (USI_TWI_Master)
                                                    USI_TWI_Master_Stop (USI_TWI_Master)
                                                    USI_TWI_Start_Transceiver_With_Data (USI_TWI_Master)
@@ -333,7 +352,7 @@ ABSOLUTE
     -------------------------------------------------------------------------
 ABSOLUTE
   Relative segment, address: DATA 00000037 - 00000037 (0x1 bytes), align: 0
-  Segment part 6. ROOT        Intra module refs:   UART_init
+  Segment part 7. ROOT        Intra module refs:   UART_init
                                                    USI_TWI_Master_Initialise (USI_TWI_Master)
                                                    USI_TWI_Master_Transfer (USI_TWI_Master)
                                                    USI_TWI_Start_Transceiver_With_Data (USI_TWI_Master)
@@ -344,55 +363,56 @@ ABSOLUTE
            =====                   =======         
            DDRB                    00000037 
     -------------------------------------------------------------------------
-NEAR_Z
-  Relative segment, address: DATA 000000A2 - 000000A4 (0x3 bytes), align: 0
-  Segment part 14.            Intra module refs:   UART_bit_interval
+TINY_Z
+  Relative segment, address: DATA 00000062 - 00000065 (0x4 bytes), align: 0
+  Segment part 15.            Intra module refs:   UART_bit_interval
+                                                   UART_init
            LOCAL                   ADDRESS         
            =====                   =======         
-           UART                    000000A2 
+           UART                    00000062 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000098 - 000000AB (0x14 bytes), align: 1
-  Segment part 19.            Intra module refs:   UART_bit_interval::??INTVEC 6
+  Relative segment, address: CODE 000000BE - 000000D1 (0x14 bytes), align: 1
+  Segment part 20.            Intra module refs:   UART_bit_interval::??INTVEC 6
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           UART_bit_interval       00000098 
+           UART_bit_interval       000000BE 
                interrupt function
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000000AC - 000000FD (0x52 bytes), align: 1
-  Segment part 20.
+  Relative segment, address: CODE 000000D2 - 00000127 (0x56 bytes), align: 1
+  Segment part 21.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           UART_init               000000AC        main (main)
+           UART_init               000000D2        main (main)
                calls direct
     -------------------------------------------------------------------------
-NEAR_I
-  Relative segment, address: DATA 000000A0 - 000000A1 (0x2 bytes), align: 0
-  Segment part 16.            Intra module refs:   UART_init
+TINY_I
+  Relative segment, address: DATA 00000060 - 00000061 (0x2 bytes), align: 0
+  Segment part 17.            Intra module refs:   UART_init
            LOCAL                   ADDRESS         
            =====                   =======         
            UART_init{1}{2}{3}::prescaler
-                                   000000A0 
+                                   00000060 
     -------------------------------------------------------------------------
 INTVEC
   Common segment, address: CODE 00000000 - 00000007 (0x8 bytes), align: 1
-  Segment part 11. ROOT 
+  Segment part 12. ROOT 
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            UART_bit_interval::??INTVEC 6
                                    00000006 
     -------------------------------------------------------------------------
-NEAR_ID
-  Relative segment, address: CODE 000002D2 - 000002D3 (0x2 bytes), align: 0
-  Segment part 17.            Intra module refs:   UART_init{1}{2}{3}::prescaler
+TINY_ID
+  Relative segment, address: CODE 00000300 - 00000301 (0x2 bytes), align: 0
+  Segment part 18.            Intra module refs:   UART_init{1}{2}{3}::prescaler
     -------------------------------------------------------------------------
 INITTAB
   Relative segment, address: CODE 00000024 - 00000029 (0x6 bytes), align: 0
-  Segment part 18.            Intra module refs:   UART_init{1}{2}{3}::prescaler
+  Segment part 19.            Intra module refs:   UART_init{1}{2}{3}::prescaler
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?<Segment init: NEAR_I>
+           ?<Segment init: TINY_I>
                                    00000024 
 
     *************************************************************************
@@ -448,63 +468,63 @@ ABSOLUTE
            =====                   =======         
            USICR                   0000002D 
     -------------------------------------------------------------------------
-NEAR_Z
-  Relative segment, address: DATA 000000A5 - 000000A5 (0x1 bytes), align: 0
+TINY_Z
+  Relative segment, address: DATA 00000066 - 00000066 (0x1 bytes), align: 0
   Segment part 13.            Intra module refs:   USI_TWI_Start_Transceiver_With_Data
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           USI_TWI_state           000000A5 
+           USI_TWI_state           00000066 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 000000FE - 00000113 (0x16 bytes), align: 1
+  Relative segment, address: CODE 00000128 - 0000013D (0x16 bytes), align: 1
   Segment part 15.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            USI_TWI_Master_Initialise
-                                   000000FE        main (main)
+                                   00000128        main (main)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000114 - 0000012F (0x1c bytes), align: 1
+  Relative segment, address: CODE 0000013E - 00000159 (0x1c bytes), align: 1
   Segment part 17.            Intra module refs:   USI_TWI_Start_Transceiver_With_Data
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           USI_TWI_Master_Stop     00000114 
+           USI_TWI_Master_Stop     0000013E 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000130 - 0000015F (0x30 bytes), align: 1
+  Relative segment, address: CODE 0000015A - 00000189 (0x30 bytes), align: 1
   Segment part 18.            Intra module refs:   USI_TWI_Start_Transceiver_With_Data
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            USI_TWI_Master_Transfer
-                                   00000130 
+                                   0000015A 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000160 - 0000020F (0xb0 bytes), align: 1
+  Relative segment, address: CODE 0000018A - 00000243 (0xba bytes), align: 1
   Segment part 19.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            USI_TWI_Start_Transceiver_With_Data
-                                   00000160        I2C_check_status (main)
-                                                   I2C_start_conversation (main)
+                                   0000018A        I2C_check_status (main)
+                                                   I2C_start_convertation (main)
                calls direct
 
     *************************************************************************
 
-  FILE NAME : C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\LIB\DLIB\dlAVR-1s-ec_nomul-n.r90
+  FILE NAME : C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\LIB\DLIB\dlAVR-1t-ec_nomul-n.r90
   LIBRARY MODULE, NAME : ?_exit
 
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000210, align: 1
+  Relative segment, address: CODE 00000244, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   00000210        ?cstartup_call_main (?C_STARTUP)
+           _exit                   00000244        ?cstartup_call_main (?C_STARTUP)
                                                    exit (?exit)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000210 - 00000211 (0x2 bytes), align: 1
+  Relative segment, address: CODE 00000244 - 00000245 (0x2 bytes), align: 1
   Segment part 5.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -525,39 +545,39 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000212, align: 1
+  Relative segment, address: CODE 00000246, align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __program_start         00000212        Absolute parts (?ABS_ENTRY_MOD)
-           ?C_STARTUP              00000212        ?RESET (?RESET)
-           __RESTART               00000212 
+           __program_start         00000246        Absolute parts (?ABS_ENTRY_MOD)
+           ?C_STARTUP              00000246        ?RESET (?RESET)
+           __RESTART               00000246 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000212 - 0000021D (0xc bytes), align: 1
+  Relative segment, address: CODE 00000246 - 00000251 (0xc bytes), align: 1
   Segment part 5.             Intra module refs:   Segment part 2
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000021E - 0000021F (0x2 bytes), align: 1
+  Relative segment, address: CODE 00000252 - 00000253 (0x2 bytes), align: 1
   Segment part 7.             Intra module refs:   Segment part 5
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?call_low_level_init    0000021E 
+           ?call_low_level_init    00000252 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000220 - 00000225 (0x6 bytes), align: 1
+  Relative segment, address: CODE 00000254 - 00000259 (0x6 bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?need_segment_init      00000220        ?<Segment init: NEAR_I> (UART)
-                                                   ?<Segment init: NEAR_Z> (main)
+           ?need_segment_init      00000254        ?<Segment init: TINY_I> (UART)
+                                                   ?<Segment init: TINY_Z> (main)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000226 - 0000022B (0x6 bytes), align: 1
+  Relative segment, address: CODE 0000025A - 0000025F (0x6 bytes), align: 1
   Segment part 11.            Intra module refs:   ?call_low_level_init
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?cstartup_call_main     00000226 
+           ?cstartup_call_main     0000025A 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?exit
@@ -565,11 +585,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 0000022C - 0000022D (0x2 bytes), align: 1
+  Relative segment, address: CODE 00000260 - 00000261 (0x2 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    0000022C        ?cstartup_call_main (?C_STARTUP)
+           exit                    00000260        ?cstartup_call_main (?C_STARTUP)
                calls direct
 
     -------------------------------------------------------------------------
@@ -578,14 +598,14 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 0000022E - 00000233 (0x6 bytes), align: 1
+  Relative segment, address: CODE 00000262 - 00000267 (0x6 bytes), align: 1
   Segment part 1.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?US_DIVMOD_L02          0000022E        UART_init (UART)
+           ?US_DIVMOD_L02          00000262        UART_init (UART)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000234 - 00000253 (0x20 bytes), align: 1
+  Relative segment, address: CODE 00000268 - 00000287 (0x20 bytes), align: 1
   Segment part 3.             Intra module refs:   ?US_DIVMOD_L02
 
     -------------------------------------------------------------------------
@@ -594,11 +614,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000254 - 00000263 (0x10 bytes), align: 1
+  Relative segment, address: CODE 00000288 - 00000297 (0x10 bytes), align: 1
   Segment part 8.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?LONG_FARG_16_L07       00000254        main (main)
+           ?LONG_FARG_16_L07       00000288        main (main)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?PROLOGUE_L09
@@ -606,36 +626,21 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000264 - 00000265 (0x2 bytes), align: 1
-  Segment part 12.
+  Relative segment, address: CODE 00000298 - 00000299 (0x2 bytes), align: 1
+  Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE4_L09          00000264        I2C_check_status (main)
-                                                   I2C_start_conversation (main)
+           ?PROLOGUE2_L09          00000298        UART_init (UART)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000266 - 00000267 (0x2 bytes), align: 1
-  Segment part 13.            Intra module refs:   ?PROLOGUE4_L09
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           ?PROLOGUE3_L09          00000266 
-    -------------------------------------------------------------------------
-CODE
-  Relative segment, address: CODE 00000268 - 00000269 (0x2 bytes), align: 1
-  Segment part 14.            Intra module refs:   ?PROLOGUE3_L09
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           ?PROLOGUE2_L09          00000268        UART_init (UART)
-    -------------------------------------------------------------------------
-CODE
-  Relative segment, address: CODE 0000026A - 0000026B (0x2 bytes), align: 1
+  Relative segment, address: CODE 0000029A - 0000029B (0x2 bytes), align: 1
   Segment part 15.            Intra module refs:   ?PROLOGUE2_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?PROLOGUE1_L09          0000026A 
+           ?PROLOGUE1_L09          0000029A 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000026C - 0000026D (0x2 bytes), align: 1
+  Relative segment, address: CODE 0000029C - 0000029D (0x2 bytes), align: 1
   Segment part 16.            Intra module refs:   ?PROLOGUE1_L09
 
     -------------------------------------------------------------------------
@@ -644,40 +649,25 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 0000026E - 0000026F (0x2 bytes), align: 1
-  Segment part 12.
+  Relative segment, address: CODE 0000029E - 0000029F (0x2 bytes), align: 1
+  Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B4_L09        0000026E        I2C_check_status (main)
-                                                   I2C_start_conversation (main)
+           ?EPILOGUE_B2_L09        0000029E        UART_init (UART)
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000270 - 00000271 (0x2 bytes), align: 1
-  Segment part 13.            Intra module refs:   ?EPILOGUE_B4_L09
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           ?EPILOGUE_B3_L09        00000270 
-    -------------------------------------------------------------------------
-CODE
-  Relative segment, address: CODE 00000272 - 00000273 (0x2 bytes), align: 1
-  Segment part 14.            Intra module refs:   ?EPILOGUE_B3_L09
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           ?EPILOGUE_B2_L09        00000272        UART_init (UART)
-    -------------------------------------------------------------------------
-CODE
-  Relative segment, address: CODE 00000274 - 00000275 (0x2 bytes), align: 1
+  Relative segment, address: CODE 000002A0 - 000002A1 (0x2 bytes), align: 1
   Segment part 15.            Intra module refs:   ?EPILOGUE_B2_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B1_L09        00000274 
+           ?EPILOGUE_B1_L09        000002A0 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000276 - 0000027F (0xa bytes), align: 1
+  Relative segment, address: CODE 000002A2 - 000002AB (0xa bytes), align: 1
   Segment part 16.            Intra module refs:   ?EPILOGUE_B1_L09
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?EPILOGUE_B0_L09        00000276 
+           ?EPILOGUE_B0_L09        000002A2 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?low_level_init
@@ -685,11 +675,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000280 - 00000283 (0x4 bytes), align: 1
+  Relative segment, address: CODE 000002AC - 000002AF (0x4 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __low_level_init        00000280        ?call_low_level_init (?C_STARTUP)
+           __low_level_init        000002AC        ?call_low_level_init (?C_STARTUP)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?segment_init
@@ -697,25 +687,25 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 00000284 - 0000028F (0xc bytes), align: 1
+  Relative segment, address: CODE 000002B0 - 000002BB (0xc bytes), align: 1
   Segment part 3.             Intra module refs:   __segment_init
            LOCAL                   ADDRESS         
            =====                   =======         
-           __memclr                00000284 
+           __memclr                000002B0 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 00000290 - 0000029B (0xc bytes), align: 1
+  Relative segment, address: CODE 000002BC - 000002C9 (0xe bytes), align: 1
   Segment part 4.             Intra module refs:   __segment_init
            LOCAL                   ADDRESS         
            =====                   =======         
-           __flashcpy              00000290 
+           __flashcpy              000002BC 
     -------------------------------------------------------------------------
 CODE
-  Relative segment, address: CODE 0000029C - 000002CF (0x34 bytes), align: 1
+  Relative segment, address: CODE 000002CA - 000002FD (0x34 bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __segment_init          0000029C        ?need_segment_init (?C_STARTUP)
+           __segment_init          000002CA        ?need_segment_init (?C_STARTUP)
                calls direct
 
     -------------------------------------------------------------------------
@@ -724,11 +714,11 @@ CODE
   SEGMENTS IN THE MODULE
   ======================
 CODE
-  Relative segment, address: CODE 000002D0 - 000002D1 (0x2 bytes), align: 1
+  Relative segment, address: CODE 000002FE - 000002FF (0x2 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __exit                  000002D0        Segment part 5 (?_exit)
+           __exit                  000002FE        Segment part 5 (?_exit)
 
     *************************************************************************
 
@@ -760,20 +750,20 @@ SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
 INTVEC               CODE          00000000 - 00000015          16   com    1
 ?FILL1               CODE          00000016 - 0000001D           8   rel    0
 INITTAB              CODE          0000001E - 00000029           C   rel    0
-CODE                 CODE          0000002A - 000002D1         2A8   rel    1
-NEAR_ID              CODE          000002D2 - 000002D3           2   rel    0
+CODE                 CODE          0000002A - 000002FF         2D6   rel    1
+TINY_ID              CODE          00000300 - 00000301           2   rel    0
 ABSOLUTE             DATA               0000001C                     rel    0
                      DATA               0000001D                   
                      DATA               0000001E                   
                      DATA               0000001F                   
                      DATA          0000002D - 0000002F           3 
                      DATA          00000036 - 00000038           3 
-                     DATA          0000004E - 00000050           3 
+                     DATA          0000004D - 00000050           4 
                      DATA          00000059 - 00000059           1 
-CSTACK               DATA          00000060 - 0000007F          20   dse    0
-RSTACK               DATA          00000080 - 0000009F          20   dse    0
-NEAR_I               DATA          000000A0 - 000000A1           2   rel    0
-NEAR_Z               DATA          000000A2 - 000000A5           4   rel    0
+TINY_I               DATA          00000060 - 00000061           2   rel    0
+TINY_Z               DATA          00000062 - 00000066           5   rel    0
+CSTACK               DATA          00000067 - 00000086          20   dse    0
+RSTACK               DATA          00000087 - 000000A6          20   dse    0
 
                 ****************************************
                 *                                      *
@@ -781,8 +771,8 @@ NEAR_Z               DATA          000000A2 - 000000A5           4   rel    0
                 *                                      *
                 ****************************************
 
- 716 bytes of CODE memory (+             8 range fill )
-  70 bytes of DATA memory (+ 10 absolute )
+ 762 bytes of CODE memory (+             8 range fill )
+  71 bytes of DATA memory (+ 11 absolute )
 
 Errors: none
 Warnings: none

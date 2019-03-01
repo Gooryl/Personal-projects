@@ -12,9 +12,9 @@ typedef struct I2C_slave
   unsigned char message_buffer[4];
 }I2C_slave;
 
-void I2C_start_conversation(I2C_slave);
+void I2C_start_convertation(I2C_slave);
 unsigned char I2C_check_status(I2C_slave);
-signed int convert_I2C_ADS_code_to_mV_value(unsigned char* );
+signed int convert_I2C_ADC_code_to_mV_value(unsigned char* );
 unsigned char* convert_I2C_value_to_string(signed int);
 
 #endif

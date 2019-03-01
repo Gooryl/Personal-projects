@@ -1,5 +1,6 @@
 #include "main.h"
 #include "UART.h"
+#include "ioavr.h"
 #include "USI_TWI_Master.h"
 
 int main( void )
@@ -15,7 +16,7 @@ int main( void )
   USI_TWI_Master_Initialise();
   
   // Start analog to digital convertation
-  I2C_start_conversation(ADS);
+  I2C_start_convertation(ADS);
   
   while(1)
   {
@@ -26,12 +27,16 @@ int main( void )
     }while (1); // wait until convetation is completed
     
     // convert ADC output code to signed int value
-    
+    signed int value = convert_I2C_ADC_code_to_mV_value(ADS.message_buffer+1); // +1 cuz data in second byte
+    if (value >= 10) // 10 mV threshold voltage
+    {
+      //send result via UART
+    }
   }
   return 0;
 }
 
-void I2C_start_conversation(I2C_slave ADS)
+void I2C_start_convertation(I2C_slave ADS)
 {
   ADS.message_buffer[0] &= ~(1 << I2C_rw_bit);
   ADS.message_buffer[1] = ADS.control_reg;

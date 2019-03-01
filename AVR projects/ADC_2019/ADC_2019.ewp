@@ -21,7 +21,7 @@
                 <option>
                     <name>Variant Memory</name>
                     <version>0</version>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>ExePath</name>
@@ -139,7 +139,7 @@
                 </option>
                 <option>
                     <name>RTConfigPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1s-ec_nomul-n.h</state>
+                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1t-ec_nomul-n.h</state>
                 </option>
                 <option>
                     <name>RTLibraryPath</name>
