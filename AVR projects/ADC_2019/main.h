@@ -4,6 +4,10 @@
 #define ADS_address(aaa) (0x48 | (aaa)) //addr is 0b1001aaa 
 #define I2C_rw_bit 0
 #define ADC_complete_bit 7
+#define address_byte 0
+#define fdata_byte 1
+#define sdata_byte 2
+#define control_reg_byte 3
 
 typedef struct I2C_slave
 {
