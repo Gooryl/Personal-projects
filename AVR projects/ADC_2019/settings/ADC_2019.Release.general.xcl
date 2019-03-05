@@ -2,7 +2,7 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr\bin\avrsim.dll" 
 
-"C:\Personal projects\AVR projects\ADC_2019\Debug\Exe\ADC_2019.hex" 
+"C:\Personal projects\AVR projects\ADC_2019\Release\Exe\ADC_2019.a90" 
 
 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\avr/bin/avrlibsupportbat.dll" 
 

@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Debug.general.xcl" --backend -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Release.general.xcl" --backend -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Release.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Debug.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Release.general.xcl" --debug_file=$debugfile --backend -f "C:\Personal projects\AVR projects\ADC_2019\settings\ADC_2019.Release.driver.xcl" 
 }

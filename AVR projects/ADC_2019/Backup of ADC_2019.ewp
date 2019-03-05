@@ -21,7 +21,7 @@
                 <option>
                     <name>Variant Memory</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>ExePath</name>
@@ -139,11 +139,11 @@
                 </option>
                 <option>
                     <name>RTConfigPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1t-ec_nomul-n.h</state>
+                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1s-ec_nomul-n.h</state>
                 </option>
                 <option>
                     <name>RTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1t-ec_nomul-n.r90</state>
+                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1s-ec_nomul-n.r90</state>
                 </option>
                 <option>
                     <name>Input variant</name>
@@ -224,7 +224,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>7.20.1.1511</state>
+                    <state>7.10.1.1197</state>
                 </option>
             </data>
         </settings>
@@ -2102,25 +2102,25 @@
     <group>
         <name>Header</name>
         <file>
+            <name>$PROJ_DIR$\I2C.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\main.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\UART.h</name>
         </file>
-        <file>
-            <name>$PROJ_DIR$\USI_TWI_Master.h</name>
-        </file>
     </group>
     <group>
         <name>Source</name>
+        <file>
+            <name>$PROJ_DIR$\I2C.c</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\UART.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\USI_TWI_Master.c</name>
         </file>
     </group>
 </project>
