@@ -143,7 +143,7 @@
                 </option>
                 <option>
                     <name>RTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1s-ec_nomul-n.r90</state>
+                    <state>$TOOLKIT_DIR$\LIB\DLIB\dlAVR-1t-ec_nomul-n.r90</state>
                 </option>
                 <option>
                     <name>Input variant</name>
@@ -2102,9 +2102,6 @@
     <group>
         <name>Header</name>
         <file>
-            <name>$PROJ_DIR$\I2C.h</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\main.h</name>
         </file>
         <file>
@@ -2116,9 +2113,6 @@
     </group>
     <group>
         <name>Source</name>
-        <file>
-            <name>$PROJ_DIR$\I2C.c</name>
-        </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
         </file>

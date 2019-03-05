@@ -2160,9 +2160,6 @@
     <group>
         <name>Header</name>
         <file>
-            <name>$PROJ_DIR$\I2C.h</name>
-        </file>
-        <file>
             <name>$PROJ_DIR$\main.h</name>
         </file>
         <file>
@@ -2174,9 +2171,6 @@
     </group>
     <group>
         <name>Source</name>
-        <file>
-            <name>$PROJ_DIR$\I2C.c</name>
-        </file>
         <file>
             <name>$PROJ_DIR$\main.c</name>
         </file>

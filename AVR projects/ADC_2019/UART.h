@@ -3,7 +3,7 @@
 
 #define MCU_frequency 8000000 
 #define UART_baud_rate 9600 //9600 work fine? else doesn't tested
-#define TX_pin PB3
+#define TX_pin PB4
 #define TX_HIGH (PORTB |= (1 << TX_pin)) 
 #define TX_LOW (PORTB &= ~(1 << TX_pin))
 

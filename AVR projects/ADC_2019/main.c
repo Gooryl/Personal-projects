@@ -20,64 +20,39 @@ int main( void )
   
   while(1)
   {
-    /*
     do 
     {
-      unsigned char old_data = I2C_check_status(ADS);
+      unsigned char old_data = I2C_check_status(ADS); //send data if data new
       if (!old_data) break;
     }while (1); // wait until convetation is completed
-    */
-    // convert ADC output code to signed int value
-    ADS.message_buffer[fdata_byte] = 0x55;
-    ADS.message_buffer[sdata_byte] = 0x30;
-    signed int value = convert_I2C_ADC_code_to_mV_value(&ADS.message_buffer[fdata_byte]);
-    if (value >= 10) // 10 mV threshold voltage
-    {
-      //send result via UART
-    }
+     
+    I2C_start_convertation(ADS);
   }
   return 0;
 }
 
 void I2C_start_convertation(I2C_slave ADS)
 {
-  ADS.message_buffer[address_byte] &= ~(1 << I2C_rw_bit);
+  ADS.message_buffer[address_byte] &= ~(1 << I2C_rw_bit); // write operation
   ADS.message_buffer[fdata_byte] = ADS.control_reg;
   USI_TWI_Start_Transceiver_With_Data(ADS.message_buffer, 2);
 }
 
 unsigned char I2C_check_status(I2C_slave ADS)
 {
-  ADS.message_buffer[address_byte] |= (1 << I2C_rw_bit);
+  ADS.message_buffer[address_byte] |= (1 << I2C_rw_bit); // read operation
   USI_TWI_Start_Transceiver_With_Data(ADS.message_buffer, 4);
-  if (!(ADS.message_buffer[control_reg_byte] & (1 << ADC_complete_bit))) return 0; // there is new data
+  if (!(ADS.message_buffer[control_reg_byte] & (1 << ADC_complete_bit))) 
+  {
+    UART_send_byte('a');
+    UART_send_byte('d');
+    UART_send_byte('c');
+    UART_send_byte('=');
+    UART_send_byte(ADS.message_buffer[fdata_byte]);
+    UART_send_byte(ADS.message_buffer[sdata_byte]);
+    UART_send_byte(0x0D); // CR
+    UART_send_byte(0x0A); // LF 
+    return 0; // there is new data
+  }
   else return 1; //convertation is not complete yet
-}
-
-signed int convert_I2C_ADC_code_to_mV_value(unsigned char* input_data_buffer)
-{
-  // due to internal GAIN = 1, the output code is equivalent to mV value
-  return (*input_data_buffer << 8) | *(input_data_buffer+1);
-}
-
-unsigned char* convert_I2C_value_to_string(signed int value)
-{
-  static unsigned char output_buffer[7] = {0}; // maximum length is -2048
-  signed int temp = value;
-  if (value < 0)
-  {
-    output_buffer[0] = '-';
-    temp = ~(value - 1);
-  }
-  else
-    output_buffer[0] = ' ';
-  //unsigned char i;
-  for (unsigned char i = 4; i > 0; --i)
-  {
-    output_buffer[i] = (unsigned char)(temp % 10);
-    temp /= 10;
-  }
-  output_buffer[5] = 0x0D; // CR
-  output_buffer[6] = 0x0A; // LF
-  return output_buffer;
 }
